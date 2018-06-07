@@ -13,7 +13,7 @@ function cipher (message, n){
     var asciiPosition = message.charCodeAt(i);
     var asciiUpper = (asciiPosition - 65 + n) % 26 + 65;
     var asciiLower = (asciiPosition - 97 + n) % 26 + 97;
-    if(asciiPosition >= 65 && asciiNumber <= 90){
+    if(asciiPosition >= 65 && asciiPosition <= 90){
       codeMessage += String.fromCharCode(asciiUpper);
     } else if(asciiPosition >= 97 && asciiPosition <= 122){
       codeMessage += String.fromCharCode(asciiLower);
@@ -30,7 +30,7 @@ function decipher (message, n){
      var asciiPosition = message.charCodeAt(j);
      var asciiUpper = (((asciiPosition + 65 - n) % 26) + 65);
      var asciiLower = (((asciiPosition + 85 - n) % 26) + 97);
-     if (asciiNumber >= 65 && asciiPosition <= 90){
+     if (asciiPosition >= 65 && asciiPosition <= 90){
        codeMessage += String.fromCharCode(asciiUpper);
      } else if(asciiPosition >= 97 && asciiPosition <= 122){
        codeMessage += String.fromCharCode(asciiLower);
